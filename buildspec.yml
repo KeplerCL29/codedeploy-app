@@ -1,0 +1,16 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: latest
+  build:
+    commands:
+      - echo Build started on `date`
+      - echo Build completed on `date`
+
+artifacts:
+  files:
+    - index.html
+    - appspec.yml
+    - scripts/**
