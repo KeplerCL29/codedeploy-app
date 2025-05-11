@@ -2,15 +2,21 @@ version: 0.2
 
 phases:
   install:
-    runtime-versions:
-      python: latest
+    commands:
+      - echo "Install phase – add any package installs here if you need them"
+  pre_build:
+    commands:
+      - echo "Test phase – running your tests"
+      # if you add a test script at tests/run_tests.sh, uncomment:
+      # - bash tests/run_tests.sh
+      - echo "No tests script found, skipping"
   build:
     commands:
-      - echo Build started on `date`
-      - echo Build completed on `date`
+      - echo "Build phase – nothing to compile for a static site"
+      - echo "Artifacts ready for deploy"
 
 artifacts:
   files:
-    - index.html
     - appspec.yml
-    - scripts/**
+    - index.html
+    - scripts/**/*
